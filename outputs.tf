@@ -1,3 +1,7 @@
+output "key_vault_managed_hardware_security_module_role_definitions_id" {
+  description = "Map of id values across all key_vault_managed_hardware_security_module_role_definitions, keyed the same as var.key_vault_managed_hardware_security_module_role_definitions"
+  value       = { for k, v in azurerm_key_vault_managed_hardware_security_module_role_definition.key_vault_managed_hardware_security_module_role_definitions : k => v.id }
+}
 output "key_vault_managed_hardware_security_module_role_definitions_description" {
   description = "Map of description values across all key_vault_managed_hardware_security_module_role_definitions, keyed the same as var.key_vault_managed_hardware_security_module_role_definitions"
   value       = { for k, v in azurerm_key_vault_managed_hardware_security_module_role_definition.key_vault_managed_hardware_security_module_role_definitions : k => v.description }
