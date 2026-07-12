@@ -19,12 +19,12 @@ EOT
     name           = string
     description    = optional(string)
     role_name      = optional(string)
-    permission = optional(object({
+    permission = optional(list(object({
       actions          = optional(list(string))
       data_actions     = optional(set(string))
       not_actions      = optional(list(string))
       not_data_actions = optional(set(string))
-    }))
+    })))
   }))
 }
 

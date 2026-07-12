@@ -7,7 +7,7 @@ resource "azurerm_key_vault_managed_hardware_security_module_role_definition" "k
   role_name      = each.value.role_name
 
   dynamic "permission" {
-    for_each = each.value.permission != null ? [each.value.permission] : []
+    for_each = each.value.permission != null ? each.value.permission : []
     content {
       actions          = permission.value.actions
       data_actions     = permission.value.data_actions
